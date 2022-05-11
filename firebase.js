@@ -3,12 +3,12 @@ import { initializeApp ,getApps , getApp} from "firebase/app";
 import {getFirestore} from "firebase/firestore";
 import {getStorage} from "firebase/storage";
 const firebaseConfig = {
-  apiKey: "AIzaSyBxJBh8lPZ8SjXMDOUFZlVkyXFpsGoEi_E",
-  authDomain: "insta-2-yt-9c659.firebaseapp.com",
-  projectId: "insta-2-yt-9c659",
-  storageBucket: "insta-2-yt-9c659.appspot.com",
-  messagingSenderId: "297176793660",
-  appId: "1:297176793660:web:6d2d7aa271a4539bd2b939"
+  apiKey: "AIzaSyCu3Zh0_Dd6PJ6a_vOeKpifGmr2CwInddo",
+  authDomain: "insta-2-lan.firebaseapp.com",
+  projectId: "insta-2-lan",
+  storageBucket: "insta-2-lan.appspot.com",
+  messagingSenderId: "679457696014",
+  appId: "1:679457696014:web:fb93e4052d58b433fc4f5f"
 };
 
 // Initialize Firebase
