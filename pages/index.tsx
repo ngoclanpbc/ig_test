@@ -10,7 +10,7 @@ const Home: NextPage = () => {
     overflow-y-scroll 
     scrollbar-hide">
       <Head>
-        <title>Instagram 2.0</title>
+        <title>Magnolia</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Modal />

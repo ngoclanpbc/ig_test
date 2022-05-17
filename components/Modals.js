@@ -29,7 +29,8 @@ function Modal() {
             username: session.user.username,
             caption: captionRef.current.value,
             profileImg: session.user.image,
-            timestamp: serverTimestamp()
+            timestamp: serverTimestamp(),
+            userId: session.user.uid,
         })
 
         console.log("New doc added with ID",docRef.id);
@@ -94,10 +95,10 @@ function Modal() {
         leaveFrom="opacity-100 translate-y-0 sm:scale-100"
         leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
         >
-            <div className="inline-block align-bottom bg-white
+            <div className="inline-block  bg-white
             rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden
             shadow-xl transform transition-all sm:my-8 
-            sm:aligh-middle sm:max-w-sm sm:w-full sm:p-6 ">
+            sm:aligh-middle sm:max-w-sm sm:w-full sm:p-6 justify-start">
                 <div>
 
                 {selectedFile ? (

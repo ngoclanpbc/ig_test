@@ -53,6 +53,7 @@ function Posts() {
                 userImg= {post.data().profileImg}
                 img ={post.data().image}
                 caption = {post.data().caption}
+                userId = {post.data().userId}
                 />
             ))}
             

@@ -26,6 +26,7 @@ export default NextAuth({
   pages: {
       signIn: "/auth/signin",
       //signOut: "/auth/signout"
+      myProfile: "/auth/myProfile",
   },
   callbacks: {
     async session({ session, token , user})

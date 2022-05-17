@@ -3,7 +3,7 @@ function MiniProfile()
 {
     const {data: session} = useSession();
 
-    console.log(session);
+    //console.log(session);
     return (
         <div className="flex items-center 
         justify-between mt-14 ml-10">

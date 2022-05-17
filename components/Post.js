@@ -15,13 +15,16 @@ import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import {db} from "../firebase";
 import Moment from "react-moment";
+import { useRouter } from "next/router";
 
-function Post({id,username,userImg,img,caption}) {
+function Post({id,username,userImg,img,caption,userId}) {
     const {data : session} = useSession();
     const [comment,setComment] = useState("");
     const [comments,setComments] = useState([]);
     const [likes,setLikes] =useState([]);
     const [hasLiked,setHasLiked] =useState(false);
+    const router = useRouter();
+    //const link = "auth"+userId;
     useEffect(
         () =>
          onSnapshot(
@@ -63,6 +66,7 @@ function Post({id,username,userImg,img,caption}) {
             username: session.user.username,
             useImage: session.user.image,
             timestamp: serverTimestamp(),
+            
         });
     };
     return (
@@ -75,7 +79,10 @@ function Post({id,username,userImg,img,caption}) {
                 className ="rounded-full h-12 w-12
                 object-contain border p-1 mr-3"
                 alt="" />
-                <p className="flex-1 font-bold">
+                <p className="flex-1 font-bold cursor-pointer"
+                onClick={() => router.push('/auth/'+userId)} 
+                //onClick={console.log('/auth/',userId)}
+                >
                      {username}
                 </p>
                 <DotsHorizontalIcon className="h-5" />

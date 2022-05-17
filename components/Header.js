@@ -12,6 +12,8 @@ import { signOut, signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useRecoilState } from "recoil";
 import { modalState } from "../atoms/modelAtom";
+import { myProfile } from "../pages/auth/myProfile";
+import logo from "../public/logo.PNG"
 function Header() {
     const {data : session} = useSession();
     const [open, setOpen] =useRecoilState(modalState);
@@ -24,8 +26,8 @@ function Header() {
                 {/* Left */}
                 <div 
                 onClick={() => router.push('/')}
-                className="relative hidden lg:inline-grid w-24">
-                    <Image src="http://links.papareact.com/ocw" 
+                className="relative hidden lg:inline-grid w-24 cursor-pointer">
+                    <Image src={logo}
                     layout="fill" 
                     objectFit="contain"
                     />
@@ -79,7 +81,9 @@ function Header() {
                     onClick={() => setOpen(true)}
                     className="navBtn" />
                     <UserGroupIcon className="navBtn" />
-                    <HeartIcon className="navBtn"/>
+                    <HeartIcon className="navBtn"
+                    onClick={() => router.push('/auth/myProfile')}
+                    />
 
                     <img 
                     onClick={signOut}
